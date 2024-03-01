@@ -1,0 +1,18 @@
+/* App.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #343a40, #23272b); /* Dark greyish blue downward gradient */
+}
+
+.app {
+  padding: 20px;
+}
+
+.app * {
+  font-weight: bold;
+  font-size: 15px;
+  color: rgb(20, 20, 20); /* Font color */
+}

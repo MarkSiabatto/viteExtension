@@ -1,0 +1,32 @@
+.column {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.large-input,
+.dark-button {
+  border: 2px solid black; /* Add border to both elements */
+}
+
+.large-input {
+  width: 300px; /* Adjust size as needed */
+}
+
+.dark-button {
+  background-color: #7e7979; /* Darker gray color */
+  color: black; /* Black font color */
+  font-weight: bold; /* Bold font */
+  padding: 5px 10px; /* Adjust padding as needed */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dark-button:hover {
+  background-color: #333; /* Darken color on hover */
+}
+
+.light-txt{
+    color: white;
+}
