@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./MainFields.css"; // Import your CSS file for styling
 
 interface FormData {
@@ -24,14 +24,7 @@ const MainFields: React.FC = () => {
   };
 
   const handleCopyToClipboard = (fieldName: keyof FormData) => {
-    navigator.clipboard
-      .writeText(formData[fieldName])
-      .then(() => {
-        console.log(`Copied ${fieldName} to clipboard!`);
-      })
-      .catch((err) => {
-        console.error("Failed to copy text:", err);
-      });
+    navigator.clipboard.writeText(formData[fieldName]);
   };
 
   const clearAllData = () => {
@@ -41,22 +34,7 @@ const MainFields: React.FC = () => {
       cuiNumber: "",
       incNumber: "",
     });
-    chrome.storage.local.remove("formData"); // Clear data from storage
   };
-
-  // Load data from Chrome storage on component mount
-  useEffect(() => {
-    chrome.storage.local.get("formData", (data) => {
-      if (data.formData) {
-        setFormData(data.formData);
-      }
-    });
-  }, []);
-
-  // Save data to Chrome storage on form data change
-  useEffect(() => {
-    chrome.storage.local.set({ formData });
-  }, [formData]);
 
   return (
     <div className="input-section">
