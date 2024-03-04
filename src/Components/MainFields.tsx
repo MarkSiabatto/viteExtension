@@ -34,6 +34,7 @@ const MainFields: React.FC = () => {
       cuiNumber: "",
       incNumber: "",
     });
+    chrome.storage.local.remove("formData");
   };
 
   return (
